@@ -11,12 +11,16 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    env: 
+      CI: true
+      MONGO_URL: mongodb://localhost/test
 
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
+        mongodb-version: ['4.2', '4.4', '5.0', '6.0']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,5 +30,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Use MongoDB from Github Actions
+      uses: supercharge/mongodb-github-action@1.8.0
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+    
     - run: yarn
     - run: npm run build --prefix client
+    - run: npm test
