@@ -19,6 +19,8 @@ async function mongoConnect () {
         });
 } 
 
+mongoose.set('strictQuery', true);
+
 async function mongoDisconnect() {
     await mongoose.disconnect();
 }
