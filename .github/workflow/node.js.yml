@@ -5,9 +5,9 @@ name: NASA PROJECT CI
 
 on:
   push:
-    branches: [ "intro" ]
+    branches: [ "Access" ]
   pull_request:
-    branches: [ "intro" ]
+    branches: [ "Access" ]
 
 jobs:
   build:
