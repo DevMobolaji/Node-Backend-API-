@@ -1,0 +1,21 @@
+{
+  "name": "NASA-API-PROJECT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TechProff/Node-Backend-proj.git",
+  "author": "TechProff <alan08037896270@outlook.com>",
+  "license": "MIT",
+  
+  "scripts": {
+    "install-server": "yarn --cwd server/src add",
+    "install-client": "npm install --prefix client",
+    "install": "yarn run install-server & yarn install-client",
+    "watch": "yarn run server & yarn run client",
+    "deploy": "npm run build --prefix client && yarn run server",
+    "deploy-cluster": "npm run build --prefix client && yarn run server-cluster",
+    "server": "yarn --cwd server/src watch",
+    "server-cluster": "yarn --cwd server/src cluster",
+    "client": "npm start --prefix client",
+    "test": "yarn --cwd server/src test && npm test --prefix client"
+  }
+}
