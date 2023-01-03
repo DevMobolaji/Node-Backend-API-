@@ -70,18 +70,17 @@ describe("Launches API", () => {
         })
     });
     
-    //     test("It should catch invalid dates", async () => {
-    //         const response = await request(app)
-    //         .post("/V1/launches")
-    //         .send(launchDataWithInvalidDate)
-    //         .expect("Content-Type", /json/);
-    //         expect(400);
-    
-    //     expect(response.body).toStrictEqual({
-    //         error: "Invalid Launch Date"
-    //     })
-    //     })
-    
-    // });
+        test("It should catch invalid dates", async () => {
+            const response = await request(app)
+            .post("/V1/launches")
+            .send(launchDataWithInvalidDate)
+            .expect("Content-Type", /json/)
+            .expect(400);
+
+        expect(response.body).toStrictEqual({
+            error: "Invalid Launch Date"
+        })
     })
+    
+    });
 })
