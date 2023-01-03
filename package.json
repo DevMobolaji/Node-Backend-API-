@@ -6,7 +6,7 @@
   "author": "TechProff <alan08037896270@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "install-server": "yarn --cwd server/src add",
+    "install-server": "yarn --cwd server/src",
     "install-client": "npm install --prefix client",
     "install": "yarn run install-server & yarn install-client",
     "watch": "yarn run server & yarn run client",
