@@ -35,11 +35,6 @@ jobs:
       uses: supercharge/mongodb-github-action@1.8.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
-
-    - name: 'Create env file'
-        run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
- 
     
     - run: yarn
     - run: yarn test
