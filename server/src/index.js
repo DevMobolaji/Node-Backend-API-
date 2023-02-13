@@ -3,6 +3,7 @@ const PORT = process.env.PORT || 8000;
 const app = require("./app");
 require("dotenv").config();
 
+console.log(process.env.PORT)
 
 const { loadLaunchesData } = require("./models/launch.model");
 const { LoadPlanetData } = require("./models/planets.model");

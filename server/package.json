@@ -21,7 +21,7 @@
     "pm2": "^5.2.2"
   },
   "scripts": {
-    "watch": "nodemon index.js",
+    "watch": "nodemon src/index.js",
     "test": "jest --detectOpenHandles",
     "test-watch": "jest --watch",
     "cluster": "pm2 start index.js -i max"
